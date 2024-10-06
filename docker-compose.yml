@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  yandex-gpt-recommendation-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yandex-gpt-recommendation
+    container_name: yandex-gpt-recommendation-app
+    ports:
+      - "8080:8080"
