@@ -58,7 +58,7 @@ public class JavaSpringYandexGptRecommendationSystemApplication {
                 // System.out.println("Токенизированный текст: " + tokenizedText);
 
                 String modifiedText = """
-                        Савелий Семенычев
+                        Иван Иванов
                         Я обладаю более чем двухлетним опытом в разработке на языке Python, сфокусированным преимущественно на создании телеграмм-ботов и парсеров.
                         Мой опыт включает взаимодействие с YOLO и создание текстовых описаний для проектов.
                         Я также изучаю Golang последние полгода.
@@ -77,6 +77,11 @@ public class JavaSpringYandexGptRecommendationSystemApplication {
                 for (Article article : recommendedArticles) {
                     logger.info("Рекомендованная статья: {}", article.getTitle());
                 }
+
+                String jsonRecommendedArticles = objectMapper.writeValueAsString(recommendedArticles);
+                logger.info("Рекомендованные статьи в формате JSON: {}", jsonRecommendedArticles);
+
+
             } catch (Exception e) {
                 logger.error("Ошибка при работе с данными", e);
             }
