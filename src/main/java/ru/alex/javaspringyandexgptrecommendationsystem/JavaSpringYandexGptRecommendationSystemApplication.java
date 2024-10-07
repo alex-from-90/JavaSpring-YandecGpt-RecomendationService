@@ -11,6 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 import ru.alex.javaspringyandexgptrecommendationsystem.client.YandexGPTClient;
 import ru.alex.javaspringyandexgptrecommendationsystem.entity.Article;
 import ru.alex.javaspringyandexgptrecommendationsystem.interfaces.UserExtractor;
@@ -39,6 +40,7 @@ public class JavaSpringYandexGptRecommendationSystemApplication {
     }
 
     @Bean("userExtractionApplicationRunner")
+    @Order(2)
     ApplicationRunner applicationRunner(RecommendationService recommendationService) {
         return args -> {
             try {
@@ -57,7 +59,7 @@ public class JavaSpringYandexGptRecommendationSystemApplication {
 
                 String modifiedText = """
                         Савелий Семенычев
-                        Я обладаю более чем двухлетним опытом в разработке на языке Python, сфокусированным преимущественно на создании телеграмм-ботов и парсеров. 
+                        Я обладаю более чем двухлетним опытом в разработке на языке Python, сфокусированным преимущественно на создании телеграмм-ботов и парсеров.
                         Мой опыт включает взаимодействие с YOLO и создание текстовых описаний для проектов.
                         Я также изучаю Golang последние полгода.
                         """;

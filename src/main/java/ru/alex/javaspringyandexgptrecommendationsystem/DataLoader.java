@@ -4,6 +4,7 @@ package ru.alex.javaspringyandexgptrecommendationsystem;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import ru.alex.javaspringyandexgptrecommendationsystem.entity.Article;
 import ru.alex.javaspringyandexgptrecommendationsystem.repository.ArticleRepository;
 
@@ -11,6 +12,7 @@ import ru.alex.javaspringyandexgptrecommendationsystem.repository.ArticleReposit
 public class DataLoader {
 
     @Bean
+    @Order(1)
     public CommandLineRunner loadData(ArticleRepository repository) {
         return args -> {
 
